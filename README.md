@@ -24,7 +24,9 @@ This repository includes the source code and presentation that I delivered at Gl
 
     - Source Code Management > Git > Repositories > Repository URL: https://github.com/bpmericle/gluecon-2018-JaC.git
     - Build > Process Job DSLs
-        - Look on Filesystem > DSL Scripts: src/main/jobs/seed.groovy
+        - Look on Filesystem > DSL Scripts:
+            - src/main/seed.groovy
+            - src/main/jobs/hello_world.groovy
         - Use Groovy Sandbox: checked
         - Action for removed jobs: Delete
         - Action for removed views: Delete
