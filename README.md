@@ -22,6 +22,7 @@ This repository includes the source code and presentation that I delivered at Gl
 
 5. Create seed freestyle job
 
+    - General > Advanced > Display Name: #Seed
     - Source Code Management > Git > Repositories > Repository URL: https://github.com/bpmericle/gluecon-2018-JaC.git
     - Build > Process Job DSLs
         - Look on Filesystem > DSL Scripts:
