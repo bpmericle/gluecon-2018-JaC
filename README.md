@@ -51,3 +51,16 @@ This repository includes the source code and presentation that I delivered at Gl
             - Default version: master
         - Retrieval Method
             - Modern SCM > Git > Project Repository: https://github.com/bpmericle/gluecon-2018-JaC.git
+
+7. Add Java and Maven tool configurations
+
+    - Manage Jenkins > Configure Tool Configuration
+        - JDK > Add JDK
+            - Name: jdk8
+            - Install from java.sun.com
+                - Select the newest JDK 8 version
+                - I agree to the Java SE Development Kit License Agreement: checked
+                - Installing JDK requires Oracle account. Click on the link and enter Oracle credentials. (This is b/c Oracle considers this an older JDK, and want you to accept the warranty as such)
+      - Maven > Add Maven
+          - Name: maven3
+      - Click "Save"
