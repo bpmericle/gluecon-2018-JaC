@@ -4,8 +4,11 @@ def call() {
     def stageName = 'Build'
     echo("Executing [${stageName}] stage steps...")
 
-    tool('jdk8')
+    def javaHome = tool('jdk8')
     def mvnHome = tool('maven3')
+
+    env.JAVA_HOME="${javaHome}"
+    env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
 
     sh("${mvnHome}/bin/mvn -v clean compile")
 
