@@ -2,6 +2,9 @@
 
 def call() {
     def stageName = 'Deploy'
-    echo("Starting stage [${stageName}]...")
-    echo("Completed stage [${stageName}].")
+    echo("Executing [${stageName}] stage steps...")
+
+    sh('mvn spring-boot:run')
+
+    echo("Completed [${stageName}] stage steps.")
 }

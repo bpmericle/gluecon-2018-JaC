@@ -2,6 +2,9 @@
 
 def call() {
     def stageName = 'Test'
-    echo("Starting stage [${stageName}]...")
-    echo("Completed stage [${stageName}].")
+    echo("Executing [${stageName}] stage steps...")
+
+    sh('mvn test')
+
+    echo("Completed [${stageName}] stage steps.")
 }
