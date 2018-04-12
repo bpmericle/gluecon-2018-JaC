@@ -2,10 +2,12 @@
 This repository includes the source code and presentation that I delivered at Gluecon 2018.
 
 ## Checklist
-1. Start up a fresh Jenkins LTS.
+1. Start up a fresh Jenkins.
 
     I typically use Docker for local testing.
+
     https://www.docker.com/get-docker
+
     https://github.com/jenkinsci/docker/blob/master/README.md
 
 2. Install Job DSL Plugin (id: job-dsl, documentation: https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin)
@@ -22,22 +24,28 @@ This repository includes the source code and presentation that I delivered at Gl
 
 5. Create seed freestyle job
 
+    - Click "New Item" from the left menu
+    - Enter "seed" for "Enter an item name"
+    - Select "Freestyle project"
+    - Click "Ok"
     - General > Advanced > Display Name: #Seed
     - Source Code Management > Git > Repositories > Repository URL: https://github.com/bpmericle/gluecon-2018-JaC.git
     - Build > Process Job DSLs
         - Look on Filesystem > DSL Scripts:
             - src/main/seed.groovy
             - src/main/jobs/hello_world.groovy
+            - src/main/pipelines/demo.groovy
         - Use Groovy Sandbox: checked
         - Action for removed jobs: Delete
         - Action for removed views: Delete
         - Action for removed config files: Delete
+    - Click "Build Now" in the left menu
 
-6. Setup 'dsl-lib' Library
+6. Setup 'pipeline-lib' Global Library
 
     - Manage Jenkins > Configure System > Global Pipeline Libraries > Add
         - Library
-            - Name: dsl-lib
+            - Name: pipeline-lib
             - Default version: master
         - Retrieval Method
             - Modern SCM > Git > Project Repository: https://github.com/bpmericle/gluecon-2018-JaC.git
