@@ -8,9 +8,11 @@ def call() {
     def mvnHome = tool('maven3')
 
     env.JAVA_HOME="${javaHome}"
-    env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
+    env.MAVEN_HOME="${mvnHome}"
+    env.PATH="${env.JAVA_HOME}/bin:${env.MAVEN_HOME}/bin:${env.PATH}"
+    echo("Java Home: ${env.JAVA_HOME}, Maven Home: ${env.MAVEN_HOME}, Path: ${env.PATH}")
 
-    sh("${mvnHome}/bin/mvn -v clean compile")
+    sh("mvn -v clean compile")
 
     echo("Completed [${stageName}] stage steps.")
 }
