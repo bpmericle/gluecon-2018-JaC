@@ -12,6 +12,8 @@ def call() {
     env.PATH="${env.JAVA_HOME}/bin:${env.MAVEN_HOME}/bin:${env.PATH}"
     echo("Java Home: ${env.JAVA_HOME}\r\n\r\nMaven Home: ${env.MAVEN_HOME}\r\n\r\nPath: ${env.PATH}")
 
+    sh("ls -lat ${javaHome}")
+
     sh("${mvnHome}/bin/mvn -v clean compile")
 
     echo("Completed [${stageName}] stage steps.")
