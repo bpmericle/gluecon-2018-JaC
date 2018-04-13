@@ -4,7 +4,7 @@ def call() {
     def stageName = 'Functional Tests'
     echo("Executing [${stageName}] stage steps...")
 
-    sh('mvn -V -B -U -e -Dmaven.main.skip=true -Dskip.surefire.tests=true -Dmaven.javadoc.skip=true -Dmaven.source.skip=true verify')
+    sh('mvn -Dskip.surefire.tests=true -Dmaven.javadoc.skip=true -Dmaven.source.skip=true -V -e verify')
 
     echo("Completed [${stageName}] stage steps.")
 }

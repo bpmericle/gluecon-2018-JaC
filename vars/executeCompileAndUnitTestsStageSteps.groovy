@@ -4,7 +4,7 @@ def call() {
     def stageName = 'Compile and Unit Tests'
     echo("Executing [${stageName}] stage steps...")
 
-    sh("mvn -V -B -U -e clean test")
+    sh("mvn -V -e clean test")
 
     echo("Completed [${stageName}] stage steps.")
 }
