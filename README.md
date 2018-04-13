@@ -6,19 +6,23 @@ This repository includes the source code and presentation that I delivered at Gl
 
     https://jenkins.io/download/
 
-2. Install Job DSL Plugin (id: job-dsl, documentation: https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin)
+2. Install Job DSL Plugin (id: job-dsl, documentation: https://plugins.jenkins.io/job-dsl)
 
     Manage Jenkins > Manage Plugins > Available Tab > Filter using "job-dsl"
 
-3. Install Authorize Project Plugin (id: authorize-project, documentation: https://wiki.jenkins-ci.org/display/JENKINS/Authorize+Project+plugin)
+3. Install Authorize Project Plugin (id: authorize-project, documentation: https://plugins.jenkins.io/authorize-project)
 
     Manage Jenkins > Manage Plugins > Available Tab > Filter using "authorize-project"
 
-4. Setup Authorize Project Plugin
+4. Install HTML Publisher Plugin (id: htmlpublisher, documentation: https://plugins.jenkins.io/htmlpublisher)
+
+    Manage Jenkins > Manage Plugins > Available Tab > Filter using "htmlpublisher"
+
+5. Setup Authorize Project Plugin
 
     Manage Jenkins > Configure Global Security > Access Control for Builds > Add > Project default Build Authorization: Run as User who Triggered Build
 
-5. Create seed freestyle job
+6. Create seed freestyle job
 
     - Click "New Item" from the left menu
     - Enter "seed" for "Enter an item name"
@@ -39,7 +43,7 @@ This repository includes the source code and presentation that I delivered at Gl
         - Action for removed config files: Delete
     - Click "Build Now" in the left menu
 
-6. Setup 'pipeline-lib' Global Library
+7. Setup 'pipeline-lib' Global Library
 
     - Manage Jenkins > Configure System > Global Pipeline Libraries > Add
         - Library
@@ -48,7 +52,7 @@ This repository includes the source code and presentation that I delivered at Gl
         - Retrieval Method
             - Modern SCM > Git > Project Repository: https://github.com/bpmericle/gluecon-2018-JaC.git
 
-7. Add Java and Maven tool configurations
+8. Add Java and Maven tool configurations
 
     - Manage Jenkins > Configure Tool Configuration
         - JDK > Add JDK
