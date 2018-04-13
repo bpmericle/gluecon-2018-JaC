@@ -4,11 +4,7 @@ This repository includes the source code and presentation that I delivered at Gl
 ## Checklist
 1. Start up a fresh Jenkins.
 
-    I typically use Docker for local testing.
-
-    https://www.docker.com/get-docker
-
-    https://github.com/jenkinsci/docker/blob/master/README.md
+    https://jenkins.io/download/
 
 2. Install Job DSL Plugin (id: job-dsl, documentation: https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin)
 
