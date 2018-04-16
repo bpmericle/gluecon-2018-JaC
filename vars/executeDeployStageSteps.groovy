@@ -10,13 +10,13 @@ def call() {
     sleep(30)
 
     echo('Testing health endpoint.')
-    def rawContent = new URL('http://localhost:8000/actuator/health').getText()
+    def rawContent = new URL('http://localhost:8080/actuator/health').getText()
     def content = readJSON(rawContent)
     def status = content.get('status')
     assert status == 'UP'
 
     echo('Shutting down service.')
-    sh('curl -k -XPOST https://localhost:8000/actuator/shutdown')
+    sh('curl -k -XPOST https://localhost:8080/actuator/shutdown')
 
     echo("Completed [${stageName}] stage steps.")
 }
