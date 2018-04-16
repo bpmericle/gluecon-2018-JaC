@@ -5,7 +5,7 @@ def call() {
     echo("Executing [${stageName}] stage steps...")
 
     //sh('mvn -Dskip.surefire.tests=true -Dskip.failsafe.tests=true -V -e verify site')
-    sh('mvn -Dserver.port=0 -V -e spring-boot:run')
+    sh('mvn -Dserver.port=8080 -V -e spring-boot:run')
 
     echo("Completed [${stageName}] stage steps.")
 }
