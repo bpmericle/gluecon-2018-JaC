@@ -4,12 +4,11 @@ def call() {
     def stageName = 'Deploy'
     echo("Executing [${stageName}] stage steps...")
 
-    def serverPort = 8090
-    def response = sh(script: "mvn -Dserver.port=${serverPort} -V -e spring-boot:run", returnStdout: true).trim()
-    echo("Output:\r\n${response}")
+    sh("mvn -Dserver.port=8080 -V -e spring-boot:run &")
 
     sleep(30)
 
+    def serverPort = 8090
     echo('Testing health endpoint.')
     def rawContent = sh(script: "curl -i -X GET http://localhost:${serverPort}/actuator/health", returnStdout: true).trim()
     echo("rawContent: ${rawContent}")
