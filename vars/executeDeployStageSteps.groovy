@@ -6,9 +6,12 @@ def call() {
 
     sh("mvn -Dserver.port=8080 -V -e spring-boot:run &")
 
-    sleep(30)
+    sleep(45)
 
-    def serverPort = 8090
+    sh('uname -s')
+    sh('ps -ax | grep java')
+
+    def serverPort = 8080
     echo('Testing health endpoint.')
     def rawContent = sh(script: "curl -i -X GET http://localhost:${serverPort}/actuator/health", returnStdout: true).trim()
     echo("rawContent: ${rawContent}")
