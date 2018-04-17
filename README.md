@@ -6,23 +6,21 @@ This repository includes the source code and presentation that I delivered at Gl
 
     https://jenkins.io/download/
 
-2. Install Job DSL Plugin (id: job-dsl, documentation: https://plugins.jenkins.io/job-dsl)
+2. Install a few Jenkins Plugins
 
-    Manage Jenkins > Manage Plugins > Available Tab > Filter using "job-dsl"
+    *Navigate:* Manage Jenkins > Manage Plugins > Available Tab
 
-3. Install Authorize Project Plugin (id: authorize-project, documentation: https://plugins.jenkins.io/authorize-project)
+    1. Install Job DSL Plugin (id: job-dsl, documentation: https://plugins.jenkins.io/job-dsl)
 
-    Manage Jenkins > Manage Plugins > Available Tab > Filter using "authorize-project"
+    2. Install Authorize Project Plugin (id: authorize-project, documentation: https://plugins.jenkins.io/authorize-project)
 
-4. Install HTML Publisher Plugin (id: htmlpublisher, documentation: https://plugins.jenkins.io/htmlpublisher)
+3. Setup Authorize Project Plugin
 
-    Manage Jenkins > Manage Plugins > Available Tab > Filter using "htmlpublisher"
+    *Navigate:* Manage Jenkins > Configure Global Security
 
-5. Setup Authorize Project Plugin
+    - Access Control for Builds > Add > Project default Build Authorization: Run as User who Triggered Build
 
-    Manage Jenkins > Configure Global Security > Access Control for Builds > Add > Project default Build Authorization: Run as User who Triggered Build
-
-6. Create seed freestyle job
+4. Create seed freestyle job
 
     - Click "New Item" from the left menu
     - Enter "seed" for "Enter an item name"
@@ -43,24 +41,12 @@ This repository includes the source code and presentation that I delivered at Gl
         - Action for removed config files: Delete
     - Click "Build Now" in the left menu
 
-7. Setup 'pipeline-lib' Global Library
+5. Setup 'pipeline-lib' Global Library
 
-    - Manage Jenkins > Configure System > Global Pipeline Libraries > Add
-        - Library
-            - Name: pipeline-lib
-            - Default version: master
-        - Retrieval Method
-            - Modern SCM > Git > Project Repository: https://github.com/bpmericle/gluecon-2018-JaC.git
+    *Navigate:* Manage Jenkins > Configure System > Global Pipeline Libraries > Add
 
-8. Add Java and Maven tool configurations
-
-    - Manage Jenkins > Configure Tool Configuration
-        - JDK > Add JDK
-            - Name: jdk8
-            - Install from java.sun.com
-                - Select the newest JDK 8 version
-                - I agree to the Java SE Development Kit License Agreement: checked
-                - Installing JDK requires Oracle account. Click on the link and enter Oracle credentials. (This is b/c Oracle considers this an older JDK, and want you to accept the warranty as such)
-      - Maven > Add Maven
-          - Name: maven3
-      - Click "Save"
+    - Library
+        - Name: pipeline-lib
+        - Default version: master
+    - Retrieval Method
+        - Modern SCM > Git > Project Repository: https://github.com/bpmericle/gluecon-2018-JaC.git
