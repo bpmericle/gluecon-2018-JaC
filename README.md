@@ -37,7 +37,7 @@ This repository includes the source code and presentation that I delivered at Gl
           - ```
             src/main/seed.groovy
             src/main/jobs/hello_world.groovy
-            src/main/pipelines/demo.groovy
+            src/main/pipelines/declarative_pipeline_demo.groovy
             ```
         - Use Groovy Sandbox: checked
         - Action for removed jobs: Delete
