@@ -60,12 +60,12 @@ This repository includes the source code and presentation that I delivered at Gl
 
     **Navigate:** Jobs > Hello World Job DSL Example
 
-    This job is your typical "Hello World" type of job. You input a name, and the job will echo back a greeting in the output log. You can find the source code for this job [here](https://github.com/bpmericle/gluecon-2018-JaC/blob/master/src/main/jobs/hello_world.groovy).
+    This job is your typical "Hello World" type of job. You input a name, and the job will echo back a greeting in the output log. You can find the source code for this job [here](src/main/jobs/hello_world.groovy).
 
 2. Demo Declarative Pipeline
 
     **Navigate:** Pipelines > Declarative Pipeline Example
 
-    This [multibranch pipeline](https://plugins.jenkins.io/workflow-multibranch) job uses a declarative pipeline to build a demo project. You can find the source code for this job [here](https://github.com/bpmericle/gluecon-2018-JaC/blob/master/src/main/pipelines/declarative_pipeline_demo.groovy) and the demo project source code [here](https://github.com/bpmericle/gluecon-2018-demo-app).
+    This [multibranch pipeline](https://plugins.jenkins.io/workflow-multibranch) job uses a declarative pipeline to build a demo project. You can find the source code for this job [here](src/main/pipelines/declarative_pipeline_demo.groovy) and the demo project source code [here](https://github.com/bpmericle/gluecon-2018-demo-app).
 
     By default, the job will not automatically scan the repository for branches that contain a [Jenkinsfile](https://jenkins.io/doc/book/pipeline/jenkinsfile/) (file defining the stages and steps within a pipeline). You will need to click the **Scan Multibranch Pipeline Now** link in the left menu, wait a few seconds, then refresh the page. You will see a separate pipeline job for each branch of the source code that contains a [Jekninsfile](https://github.com/bpmericle/gluecon-2018-demo-app/blob/master/Jenkinsfile) in the root directory.
