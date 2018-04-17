@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
-multibranchPipelineJob('pipelines/demo') {
-    displayName('Demo')
-    description('Pipeline for the demo project.')
+multibranchPipelineJob('pipelines/declarative-pipeline-demo') {
+    displayName('Declarative Pipeline Example')
+    description('Declarative Pipeline for a demo project.')
 
     branchSources {
         git {

@@ -1,7 +1,7 @@
 # gluecon-2018-JaC
 This repository includes the source code and presentation that I delivered at Gluecon 2018.
 
-## Checklist
+## Installation and Setup
 1. Start up a fresh Jenkins.
 
     I typically download the generic java package (.war) file and run it from the command-line. https://jenkins.io/download/
@@ -12,7 +12,7 @@ This repository includes the source code and presentation that I delivered at Gl
 
 2. Install a few Jenkins Plugins
 
-    *Navigate:* Manage Jenkins > Manage Plugins > Available Tab
+    **Navigate:** Manage Jenkins > Manage Plugins > Available Tab
 
     1. Install Job DSL Plugin (id: job-dsl, documentation: https://plugins.jenkins.io/job-dsl)
 
@@ -20,7 +20,7 @@ This repository includes the source code and presentation that I delivered at Gl
 
 3. Setup Authorize Project Plugin
 
-    *Navigate:* Manage Jenkins > Configure Global Security
+    **Navigate:** Manage Jenkins > Configure Global Security
 
     - Access Control for Builds > Add > Project default Build Authorization: Run as User who Triggered Build
 
@@ -47,10 +47,23 @@ This repository includes the source code and presentation that I delivered at Gl
 
 5. Setup 'pipeline-lib' Global Library
 
-    *Navigate:* Manage Jenkins > Configure System > Global Pipeline Libraries > Add
+    **Navigate:** Manage Jenkins > Configure System > Global Pipeline Libraries > Add
 
     - Library
         - Name: pipeline-lib
         - Default version: master
     - Retrieval Method
         - Modern SCM > Git > Project Repository: https://github.com/bpmericle/gluecon-2018-JaC.git
+
+## Jobs Created
+1. Hello World Freestyle Job
+
+    **Navigate:** Jobs > Hello World Job DSL Example
+
+    This job is your typical "Hello World" type of job. You input a name, and the job will echo back a greeting in the output log. You can find the source code for this job [here](https://github.com/bpmericle/gluecon-2018-JaC/blob/master/src/main/jobs/hello_world.groovy).
+
+2. Demo Declarative Pipeline
+
+    **Navigate:** Pipelines > Declarative Pipeline Example
+
+    This [multi-branch pipeline](https://plugins.jenkins.io/workflow-multibranch) job uses a declarative pipeline to build a demo project. You can find the source code for this job [here](https://github.com/bpmericle/gluecon-2018-JaC/blob/master/src/main/pipelines/declarative_pipeline_demo.groovy).
