@@ -24,12 +24,12 @@ def call() {
     echo('Test the service with no parameter.')
     def testEndpointNoParamContent = sh(script: "curl http://localhost:${serverPort}/greet", returnStdout: true).trim()
     echo("received content: [${testEndpointNoParamContent}]")
-    assert testEndpointContent.contains('{"id": 1, "content": "Hello, Stranger!"}')
+    assert testEndpointNoParamContent.contains('{"id":1,"content":"Hello, Stranger!"}')
 
     echo('Test the service with a parameter.')
     def testEndpointContent = sh(script: "curl http://localhost:${serverPort}/greet?name=Brian", returnStdout: true).trim()
     echo("received content: [${testEndpointContent}]")
-    assert testEndpointContent.contains('{"id": 2, "content": "Hello, Brian!"}')
+    assert testEndpointContent.contains('{"id":2,"content":"Hello, Brian!"}')
 
     echo('Shutdown the service.')
     def shutdownEndpointContent = sh(script: "curl -X POST http://localhost:${serverPort}/actuator/shutdown", returnStdout: true).trim()
