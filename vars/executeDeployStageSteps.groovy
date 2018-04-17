@@ -9,13 +9,15 @@ def call() {
 
     def retries = 4
     def attempts = 0
-    def sleepInterval = 15
     retry(retries) {
         attempts++
+
+        def sleepInterval = attempts > 1 ? 5 : 35
         sleep(sleepInterval)
         echo("Testing health endpoint. Attempt ${attempts} out of ${retries}.")
         def content = sh(script: "curl -X GET http://localhost:${serverPort}/actuator/health", returnStdout: true).trim()
-        assert content.contains('{\"status\":\"UP\"}')
+        echo("content: [${content}]")
+        assert content.contains('{"status":"UP"}')
     }
 
     echo('Shutting down service.')
