@@ -46,6 +46,7 @@ This repository includes the source code and presentation that I delivered at Gl
     - Click "Build Now" in the left menu
 
 5. Setup 'pipeline-lib' Global Library
+
     This library is a set of functions that will be available for use in the pipeline. The functions live inside the `vars` directory. This library also contains the DSL for the job and pipeline creation located in the `src` directory.
 
     **Navigate To:** Manage Jenkins > Configure System > Global Pipeline Libraries > Add
