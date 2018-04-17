@@ -15,13 +15,15 @@ def call() {
         def sleepInterval = attempts > 1 ? 5 : 35
         sleep(sleepInterval)
         echo("Testing health endpoint. Attempt ${attempts} out of ${retries}.")
-        def content = sh(script: "curl -X GET http://localhost:${serverPort}/actuator/health", returnStdout: true).trim()
-        echo("content: [${content}]")
-        assert content.contains('{"status":"UP"}')
+        def healthEndpointContent = sh(script: "curl -X GET http://localhost:${serverPort}/actuator/health", returnStdout: true).trim()
+        echo("healthEndpointContent: [${healthEndpointContent}]")
+        assert healthEndpointContent.contains('{"status":"UP"}')
     }
 
     echo('Shutting down service.')
-    sh("curl -i -X POST http://localhost:${serverPort}/actuator/shutdown")
+    def shutdownEndpointContent = sh(script: "curl -i -X POST http://localhost:${serverPort}/actuator/shutdown", returnStdout: true).trim()
+    echo("shutdownEndpointContent: [${shutdownEndpointContent}]")
+    assert shutdownEndpointContent.contains('{"message":"Shutting down, bye..."}')
 
     echo("Completed [${stageName}] stage steps.")
 }
