@@ -68,4 +68,4 @@ This repository includes the source code and presentation that I delivered at Gl
 
     This [multibranch pipeline](https://plugins.jenkins.io/workflow-multibranch) job uses a declarative pipeline to build a demo project. You can find the source code for this job [here](https://github.com/bpmericle/gluecon-2018-JaC/blob/master/src/main/pipelines/declarative_pipeline_demo.groovy).
 
-    By default, the job will not automatically scan the repository for branches that contain a Jenkinsfile (file defining the stages and steps within a pipeline). You will need to click the **Scan Multibranch Pipeline Now** link in the left menu, wait a few seconds, then refresh the page.
+    By default, the job will not automatically scan the repository for branches that contain a [Jenkinsfile](https://jenkins.io/doc/book/pipeline/jenkinsfile/) (file defining the stages and steps within a pipeline). You will need to click the **Scan Multibranch Pipeline Now** link in the left menu, wait a few seconds, then refresh the page. You will see a separate pipeline job for each branch of the source code that contains a Jekninsfile in the root directory.
