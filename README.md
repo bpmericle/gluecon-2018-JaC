@@ -4,7 +4,11 @@ This repository includes the source code and presentation that I delivered at Gl
 ## Checklist
 1. Start up a fresh Jenkins.
 
-    https://jenkins.io/download/
+    I typically download the generic java package (.war) file and run it from the command-line. https://jenkins.io/download/
+
+    ```
+    $> java -jar jenkins.war
+    ```
 
 2. Install a few Jenkins Plugins
 
