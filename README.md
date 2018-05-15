@@ -2,6 +2,8 @@
 This repository includes the source code and presentation that I delivered at Gluecon 2018.
 
 ## Installation and Setup
+Click [here](docker-setup.md) if you want to use a Docker image. If you do this, you can skip step 2.
+
 1. Start up a fresh Jenkins.
 
     I typically download the generic java package (.war) file and run it from the command-line. https://jenkins.io/download/
@@ -35,7 +37,6 @@ This repository includes the source code and presentation that I delivered at Gl
     - Build > Process Job DSLs
         - Look on Filesystem > DSL Scripts:
           - ```
-            src/main/seed.groovy
             src/main/jobs/hello_world.groovy
             src/main/pipelines/declarative_pipeline_demo.groovy
             ```
