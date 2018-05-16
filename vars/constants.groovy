@@ -7,10 +7,9 @@ import groovy.transform.Field
 @Field String STAGE_STATIC_ANALYSIS = 'Static Analysis'
 @Field String STAGE_INTEGRATION_TESTS = 'Integration Tests'
 @Field String STAGE_PUBLISH_ARTIFACT = 'Publish Artifact'
-@Field String STAGE_INTEGRATION_TESTS = 'Integration Tests'
-@Field String STAGE_DEPLOY_PRE_PRODUCTION = 'Deploy Pre-Production'
-@Field String STAGE_DEPLOY_TO_PRODUCTION = 'Deploy to Production?'
-@Field String STAGE_DEPLOY_PRODUCTION = 'Deploy Production'
+@Field String STAGE_DEPLOY_TO_PRE_PRODUCTION = 'Deploy to Pre-Production'
+@Field String STAGE_DEPLOY_TO_PRODUCTION_INPUT = 'Deploy to Production?'
+@Field String STAGE_DEPLOY_TO_PRODUCTION = 'Deploy to Production'
 
 @Field String STEP_NAME_COMPILE = 'Compile'
 
