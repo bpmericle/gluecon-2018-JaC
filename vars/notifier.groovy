@@ -30,11 +30,14 @@ def buildSubject(status) {
 
 def notifyByEmail(subject, body) {
     try {
+        echo("Emailing with subject [${subject}] and body [${body}].")
+        /*
         mail(subject: subject,
              from: 'notifier@yourcompany.com',
              to: 'you@yourcompany.com',
              body: body)
+        */
     } catch (Exception ex) {
-        echo("Caught while trying to email a notification: ${ex.message}")
+        echo("Caught an exception while trying to email a notification: ${ex.message}")
     }
 }
