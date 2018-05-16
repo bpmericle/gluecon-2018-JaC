@@ -3,7 +3,7 @@
 def call(metricName, value, tags=null) {
     def defaultTags = [:]
     if (tags != null) {
-        defaultTags.addAll(tags)
+        defaultTags.putAll(tags)
     }
     defaultTags['job_name'] = JOB_NAME
     defaultTags['job_url'] = JOB_URL
