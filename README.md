@@ -18,15 +18,7 @@ Click [here](docker-setup.md) if you want to use a Docker image for step 1. If y
 
     1. Install Job DSL Plugin (id: job-dsl, documentation: https://plugins.jenkins.io/job-dsl)
 
-    2. Install Authorize Project Plugin (id: authorize-project, documentation: https://plugins.jenkins.io/authorize-project)
-
-3. Setup Authorize Project Plugin
-
-    **Navigate To:** Manage Jenkins > Configure Global Security
-
-    - Access Control for Builds > Add > Project default Build Authorization: Run as User who Triggered Build
-
-4. Create seed freestyle job
+3. Create seed freestyle job
 
     - Click "New Item" from the left menu
     - Enter "seed" for "Enter an item name"
@@ -46,7 +38,7 @@ Click [here](docker-setup.md) if you want to use a Docker image for step 1. If y
         - Action for removed config files: Delete
     - Click "Build Now" in the left menu
 
-5. Setup **pipeline-lib** Global Library
+4. Setup **pipeline-lib** Global Library
 
     This library is a set of functions that will be available for use in the pipeline. The functions live inside the `vars` directory. This library also contains the DSL for the job and pipeline creation located in the `src` directory.
 
