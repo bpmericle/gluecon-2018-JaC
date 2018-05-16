@@ -3,7 +3,7 @@
 def call() {
     echo("Executing [Static Analysis] stage steps...")
 
-    sh("mvn -DskipSourceCompile=true -DskipTestCompile=true -Dskip.surefire.tests=true -Dskip.failsafe.tests=true -Dmaven.javadoc.skip=true -e verify")
+    echo("Execute static analysis with something like Sonarqube.")
 
     echo("Completed [Static Analysis] stage steps.")
 }
