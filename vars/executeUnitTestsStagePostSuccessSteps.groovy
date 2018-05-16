@@ -2,5 +2,5 @@
 
 def call() {
     junit(allowEmptyResults: false, testResults: '**/target/surefire-reports/**/*.xml')
-    echo("Completed [${constants.STAGE_UNIT_TESTS}] stage with result [${constants.STATUS_SUCCESS}].")
+    echo("Completed [Unit Tests] stage with result [success].")
 }

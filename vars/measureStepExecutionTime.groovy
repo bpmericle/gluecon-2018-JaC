@@ -19,6 +19,6 @@ def call(stepName, body) {
 
         def tags = [:]
         tags['step_name', stepName]
-        publishMetric(constants.METRIC_NAME_EXECUTION_TIME, executionTime, tags)
+        publishMetric('execution_time', executionTime, tags)
     }
 }

@@ -5,5 +5,5 @@ def call() {
     def endTime = System.currentTimeMillis()
     def executionTime = endTime - startTime
 
-    publishMetric(constants.METRIC_NAME_EXECUTION_TIME, executionTime)
+    publishMetric('execution_time', executionTime)
 }
