@@ -4,15 +4,7 @@ RUN /usr/local/bin/install-plugins.sh dashboard-view cloudbees-folder antisamy-m
 
 USER root
 # Add Maven
-RUN apt-get update && apt-get install -y maven
-# Add Docker
-RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
-RUN apt-key fingerprint 0EBFCD88
-RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable edge"
-RUN apt-get update && apt-get install -y docker-ce
-RUN usermod -aG docker jenkins
-RUN echo "\njenkins ALL=NOPASSWD:/usr/bin/docker,/usr/local/bin/kubectl" >> /etc/sudoers
-RUN systemctl enable docker
-RUN service docker start
+RUN apk -U add maven
+# Add docker
+RUN apk -U add docker
 USER jenkins

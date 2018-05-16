@@ -1,7 +1,6 @@
 #!/usr/bin/env groovy
 
 def call() {
-    def stageName = 'Functional Tests'
     junit(allowEmptyResults: false, testResults: '**/target/failsafe-reports/**/*.xml')
-    echo("Completed [${stageName}] stage with result [success].")
+    echo("Completed [${constants.STAGE_INTEGRATION_TESTS}] stage with result [${constants.STATUS_SUCCESS}].")
 }

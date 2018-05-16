@@ -2,7 +2,7 @@
 This repository includes the source code and presentation that I delivered at Gluecon 2018.
 
 ## Installation and Setup
-Click [here](docker-setup.md) if you want to use a Docker image. If you do this, you can skip step 2.
+Click [here](docker-setup.md) if you want to use a Docker image for step 1. If you do this, you can skip step 2.
 
 1. Start up a fresh Jenkins.
 
