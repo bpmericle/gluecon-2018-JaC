@@ -5,6 +5,4 @@ RUN /usr/local/bin/install-plugins.sh dashboard-view cloudbees-folder antisamy-m
 USER root
 # Add Maven
 RUN apk -U add maven
-# Add docker
-RUN apk -U add docker
 USER jenkins
