@@ -1,0 +1,28 @@
+#!/usr/bin/env groovy
+@Library(['pipeline-lib']) _
+
+pipeline {
+    agent any
+    stages {
+        stage('Compile') {
+            steps {
+                executeCompileStageSteps()
+            }
+            post {
+                success {
+                    executeCompileStagePostSuccessSteps()
+                }
+                failure {
+                    executeCompileStagePostFailureSteps()
+                }
+            }
+        }
+    post {
+        success {
+            executePostPipelineSuccessSteps()
+        }
+        failure {
+            executePostPipelineFailureSteps()
+        }
+    }
+}
