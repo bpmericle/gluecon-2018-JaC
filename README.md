@@ -2,8 +2,6 @@
 This repository includes the source code and presentation that I delivered at Gluecon 2018.
 
 ## Installation and Setup
-Click [here](docker-setup.md) if you want to use a Docker image for step 1. If you do this, you can skip step 2.
-
 1. Start up a fresh Jenkins.
 
     I typically download the generic java package (.war) file and run it from the command-line. https://jenkins.io/download/
@@ -29,8 +27,8 @@ Click [here](docker-setup.md) if you want to use a Docker image for step 1. If y
     - Build > Process Job DSLs
         - Look on Filesystem > DSL Scripts:
           - ```
-            src/main/jobs/hello_world.groovy
-            src/main/pipelines/declarative_pipeline_demo.groovy
+            src/jobs/hello_world.groovy
+            src/pipelines/pipeline_demo.groovy
             ```
         - Use Groovy Sandbox: checked
         - Action for removed jobs: Delete
@@ -38,32 +36,18 @@ Click [here](docker-setup.md) if you want to use a Docker image for step 1. If y
         - Action for removed config files: Delete
     - Click "Build Now" in the left menu
 
-4. Setup **pipeline-lib** Global Library
-
-    This library is a set of functions that will be available for use in the pipeline. The functions live inside the `vars` directory. This library also contains the DSL for the job and pipeline creation located in the `src` directory.
-
-    **Navigate To:** Manage Jenkins > Configure System > Global Pipeline Libraries > Add
-
-    - Library
-        - Name: pipeline-lib
-        - Default version: master
-    - Retrieval Method
-        - Modern SCM > Git > Project Repository: https://github.com/bpmericle/gluecon-2018-JaC.git
-
 ## Jobs Created
 1. Hello World Freestyle Job
 
     **Navigate To:** Jobs > Hello World Job DSL Example
 
-    This job is your typical "Hello World" type of job. You input a name, and the job will echo back a greeting in the output log. You can find the source code for this job [here](src/main/jobs/hello_world.groovy).
+    This job is your typical "Hello World" type of job. You input a name, and the job will echo back a greeting in the output log. You can find the source code for this job [here](src/jobs/hello_world.groovy).
 
-2. Demo Declarative Pipeline
+2. Demo Declarative Pipeline Job
 
-    **Navigate To:** Pipelines > Declarative Pipeline Example
+    **Navigate To:** Pipelines > Pipeline Example
 
-    This [multibranch pipeline](https://plugins.jenkins.io/workflow-multibranch) job uses a declarative pipeline to build a demo project. You can find the source code for this job [here](src/main/pipelines/declarative_pipeline_demo.groovy) and the demo project source code [here](https://github.com/bpmericle/gluecon-2018-demo-app).
-
-    By default, the job will not automatically scan the repository for branches that contain a [Jenkinsfile](https://jenkins.io/doc/book/pipeline/jenkinsfile/) (file defining the stages and steps within a pipeline). You will need to click the **Scan Multibranch Pipeline Now** link in the left menu, wait a few seconds, then refresh the page. You will see a separate pipeline job for each branch of the source code that contains a [Jekninsfile](https://github.com/bpmericle/gluecon-2018-demo-app/blob/master/Jenkinsfile) in the root directory.
+    This pipeline job uses a declarative pipeline [Jenkinsfile](src/pipelines/Jenkinsfile) definition.
 
 ## Resources
 Below you will find the many resources I have used to aid me in my Jenkins job and pipeline development activities.
